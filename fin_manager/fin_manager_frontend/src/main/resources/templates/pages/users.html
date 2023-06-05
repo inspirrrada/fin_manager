@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .btn-back {
+            width: 6em;
+        }
+    </style>
+    <title>Users list</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <a th:href="@{'/index'}" th:type="button" class="btn btn-outline-dark btn-back"><<  Back</a>
+    <br>
+    <br>
+    <br>
+    <h4 class="text-center">SELECT USER</h4>
+    <h4 class="text-center">with which you want to test application</h4>
+    <br>
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-header">
+            Users list
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>
+                        User
+                    </th>
+                    <th>
+                        Session
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.getFullName()}"></td>
+                    <td>
+                        <a th:href="@{'/accounts/' + ${user.getId()} + '/all'}" th:type="button" class="btn btn-light">Run</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

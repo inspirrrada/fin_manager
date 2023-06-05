@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .failed {
+            width: 15em;
+        }
+    </style>
+    <title>Failed</title>
+</head>
+<body>
+<div layout:fragment="content" class="row text-center">
+    <img th:src="@{/images/transaction-fail.png}" alt="Failed" class="failed mx-auto d-block mb-5">
+    <br>
+    <br>
+    <br>
+    <h4>Transaction failed</h4>
+    <p>Please contact our support service for detail info</p>
+    <br>
+    <br>
+    <a th:href="@{'/accounts/' + ${userId} + '/all'}" th:type="button" class="failed btn btn-outline-dark btn-back mx-auto d-block mt-5"><<  Back to account menu</a>
+</div>
+</body>
+</html>

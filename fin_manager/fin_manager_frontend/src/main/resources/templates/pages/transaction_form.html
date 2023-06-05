@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .transaction-form {
+            width: 35em;
+        }
+    </style>
+    <title>Transaction form</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <a th:href="@{'/accounts/' + ${userId} + '/all'}" th:type="button" class="btn btn-outline-dark btn-back"><<  Back</a>
+    <br>
+    <br>
+    <br>
+    <h4 class="text-center">TRANSACTION FORM</h4>
+    <br>
+    <br>
+    <br>
+    <div class="input-group d-flex justify-content-center">
+        <form th:action="@{'/transactions/' +  ${userId} + '/' + ${account.getId()} + '/new'}" th:object="${transaction}" th:method="POST" class="transaction-form">
+                <p>Account of sender:
+                    <input disabled type="text" class="form-control" th:value="${account.getAccountNumber()}"/>
+                </p>
+                <p>Account of receiver:
+                    <input type="text" class="form-control" th:field="*{toAccountNumber}"/>
+                </p>
+                <p>Sum:
+                    <input type="number" class="form-control" th:field="*{sum}"/>
+                </p>
+                <div class="text-center">
+                    <button th:type="submit" value="Submit" class="btn btn-primary active">Submit</button>
+                    <button th:type="reset" value="Reset" class="btn btn-warning">Reset</button>
+                </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

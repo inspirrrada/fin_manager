@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        .btn {
+            min-width: 250px;
+            text-transform: uppercase;
+            color: #002540;
+        }
+        .row{ display: flex; align-items: center;}
+        .home-img {
+            width: 85%;
+        }
+        .home-text {
+            color: #33406D;
+        }
+    </style>
+</head>
+<body>
+
+    <div layout:fragment="content">
+        <div class="row justify-content-md-center align-items-center">
+            <div class="col-8 align-self-center">
+                    <img th:src="@{/images/financial.png}" alt="Financial routine" class="home-img" >
+            </div>
+            <div class="col-4 align-self-center text-center">
+                <h1 class="home-text"><b>WELCOME TO THE FINMAN</b></h1>
+                <br>
+                <br>
+                <br>
+                <h3 class="home-text">Your reliable assistant for personal finance management</h3>
+                <br>
+                <br>
+                <a th:href="@{'/users'}" th:type="button" class="btn btn-lg btn-warning btn-start text-center home-text">GO TO TEST MODE</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

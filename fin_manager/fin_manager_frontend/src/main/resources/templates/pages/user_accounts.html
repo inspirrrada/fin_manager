@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>User accounts</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <a th:href="@{'/users'}" th:type="button" class="btn btn-outline-dark btn-back"><<  Back</a>
+    <br>
+    <br>
+    <br>
+    <h4 class="text-center">ACCOUNTS MENU</h4>
+    <br>
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-header" th:text="${user.getFullName()}">
+           Balance information
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>
+                        Account number
+                    </th>
+                    <th>
+                       Balance
+                    </th>
+                    <th>
+                        Make transaction
+                    </th>
+                    <th>
+                        Statement
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="account : ${user.getAccounts()}">
+                    <td th:text="${account.getAccountNumber()}"></td>
+                    <td th:text="${account.getBalance()}"></td>
+                    <td>
+                        <a th:href="@{'/transactions/' + ${user.getId()} + '/' + ${account.getId()} + '/new'}" th:type="button" class="btn btn-light">Start</a>
+                    </td>
+                    <td>
+                        <a th:href="@{'/accounts/' + ${user.getId()} + '/' + ${account.getId()} + '/filters'}" th:type="button" class="btn btn-light">View</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

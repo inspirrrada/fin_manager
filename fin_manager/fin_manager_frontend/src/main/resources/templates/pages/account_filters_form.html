@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .filters-form {
+            width: 35em;
+        }
+    </style>
+    <title>Date filters</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <a th:href="@{'/accounts/' + ${userId} + '/all'}" th:type="button" class="btn btn-outline-dark btn-back"><<  Back</a>
+    <br>
+    <br>
+    <br>
+    <h4 class="text-center">DATE FORM</h4>
+    <h5 class="text-center">Please select period for statement</h5>
+    <br>
+    <br>
+    <br>
+    <div class="input-group d-flex justify-content-center">
+        <form th:action="@{'/accounts/' + ${userId} + '/' + ${accountId} + '/statement'}" th:object="${filters}" th:method="GET" class="filters-form">
+            <p>From:
+                <input type="date" class="form-control" th:field="*{fromDate}"/>
+            </p>
+            <p>To:
+                <input type="date" class="form-control" th:field="*{toDate}"/>
+            </p>
+            <div class="text-center">
+                <button th:type="submit" value="Submit" class="btn btn-primary active">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

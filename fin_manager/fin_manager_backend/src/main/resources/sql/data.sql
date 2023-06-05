@@ -1,0 +1,75 @@
+insert into users values (1, '2023-01-01', '2023-01-01', 3, 30, 'Harry', 'Potter');
+insert into users values (2, '2023-01-01', '2023-01-01', 1, 31, 'Ron', ' Weasley');
+insert into users values (3, '2023-01-01', '2023-01-01', 2, 29, 'Hermione', 'Granger');
+insert into users values (4, '2023-01-01', '2023-01-01', 3, 34, 'Draco', 'Malfoy');
+
+insert into accounts values (1, '2023-01-01', '2023-01-01', 'UA1', 1000.00, true, 1);
+insert into accounts values (2, '2023-01-02', '2023-01-02', 'UA2', 0.00, true, 1);
+insert into accounts values (3, '2023-01-05', '2023-01-05', 'UA3', 55.00, true, 1);
+insert into accounts values (4, '2023-01-01', '2023-01-01', 'UA4', 99.00, true, 2);
+insert into accounts values (5, '2023-01-01', '2023-01-01', 'UA5', 244.00, true, 3);
+insert into accounts values (6, '2023-01-05', '2023-01-05', 'UA6', 15.00, true, 3);
+insert into accounts values (7, '2023-01-01', '2023-01-01', 'UA7', 250.00, true, 4);
+insert into accounts values (8, '2023-01-10', '2023-01-10', 'UA8', 1000.00, true, 4);
+insert into accounts values (9, '2023-01-10', '2023-01-10', 'UA9', 0.00, true, 4);
+
+insert into users_accounts values (1, 1);
+insert into users_accounts values (1, 2);
+insert into users_accounts values (1, 3);
+insert into users_accounts values (2, 4);
+insert into users_accounts values (3, 5);
+insert into users_accounts values (3, 6);
+insert into users_accounts values (4, 7);
+insert into users_accounts values (4, 8);
+insert into users_accounts values (4, 9);
+
+insert into transaction_categories values (1, '2023-01-01', '2023-01-01', true, 'MONEY_TRANSFER');
+insert into transaction_categories values (2, '2023-01-01', '2023-01-01', false, 'ACCOUNT_REPLENISHMENT');
+
+insert into transactions values (1, '2023-01-11', '2023-01-11', 100.00, 1, 4);
+insert into transactions values (2, '2023-01-15', '2023-01-15', 234.00, 9, 3);
+insert into transactions values (3, '2023-01-20', '2023-01-20', 15.00, 4, 5);
+insert into transactions values (4, '2023-01-25', '2023-01-25', 315.00, 8, 2);
+insert into transactions values (5, '2023-01-30', '2023-01-30', 44.00, 6, 1);
+insert into transactions values (6, '2023-02-05', '2023-02-05', 10.00, 5, 9);
+insert into transactions values (7, '2023-02-10', '2023-02-10', 191.00, 4, 1);
+insert into transactions values (8, '2023-02-15', '2023-02-15', 95.00, 6, 8);
+insert into transactions values (9, '2023-02-20', '2023-02-20', 500.00, 5, 2);
+insert into transactions values (10, '2023-02-25', '2023-02-25', 211.00, 1, 7);
+insert into transactions values (11, '2023-03-10', '2023-03-10', 77.00, 1, 6);
+insert into transactions values (12, '2023-03-20', '2023-03-20', 116.00, 7, 2);
+insert into transactions values (13, '2023-03-30', '2023-03-30', 443.00, 2, 4);
+insert into transactions values (14, '2023-04-05', '2023-04-05', 94.00, 4, 5);
+insert into transactions values (15, '2023-04-10', '2023-04-10', 111.00, 7, 3);
+
+insert into transactions_register values(1, '2023-01-11', '2023-01-11', 1, 2, 1);
+insert into transactions_register values(2, '2023-01-11', '2023-01-11', 1, 1, 2);
+insert into transactions_register values(3, '2023-01-15', '2023-01-15', 2, 2, 4);
+insert into transactions_register values(4, '2023-01-15', '2023-01-15', 2, 1, 1);
+insert into transactions_register values(5, '2023-01-20', '2023-01-20', 3, 2, 2);
+insert into transactions_register values(6, '2023-01-20', '2023-01-20', 3, 1, 3);
+insert into transactions_register values(7, '2023-01-25', '2023-01-25', 4, 2, 4);
+insert into transactions_register values(8, '2023-01-25', '2023-01-25', 4, 1, 1);
+insert into transactions_register values(9, '2023-01-30', '2023-01-30', 5, 2, 3);
+insert into transactions_register values(10, '2023-01-30', '2023-01-30', 5, 1, 1);
+insert into transactions_register values(11, '2023-02-05', '2023-02-05', 6, 2, 3);
+insert into transactions_register values(12, '2023-02-05', '2023-02-05', 6, 1, 4);
+insert into transactions_register values(13, '2023-02-10', '2023-02-10', 7, 2, 2);
+insert into transactions_register values(14, '2023-02-10', '2023-02-10', 7, 1, 1);
+insert into transactions_register values(15, '2023-02-15', '2023-02-15', 8, 2, 3);
+insert into transactions_register values(16, '2023-02-15', '2023-02-15', 8, 1, 4);
+insert into transactions_register values(17, '2023-02-20', '2023-02-20', 9, 2, 3);
+insert into transactions_register values(18, '2023-02-20', '2023-02-20', 9, 1, 1);
+insert into transactions_register values(19, '2023-02-25', '2023-02-25', 10, 2, 1);
+insert into transactions_register values(20, '2023-02-25', '2023-02-25', 10, 1, 4);
+insert into transactions_register values(21, '2023-03-10', '2023-03-10', 11, 2, 1);
+insert into transactions_register values(22, '2023-03-10', '2023-03-10', 11, 1, 3);
+insert into transactions_register values(23, '2023-03-20', '2023-03-20', 12, 2, 4);
+insert into transactions_register values(24, '2023-03-20', '2023-03-20', 12, 1, 1);
+insert into transactions_register values(25, '2023-03-30', '2023-03-30', 13, 2, 1);
+insert into transactions_register values(26, '2023-03-30', '2023-03-30', 13, 1, 2);
+insert into transactions_register values(27, '2023-04-05', '2023-04-05', 14, 2, 2);
+insert into transactions_register values(28, '2023-04-05', '2023-04-05', 14, 1, 3);
+insert into transactions_register values(29, '2023-04-10', '2023-04-10', 15, 2, 4);
+insert into transactions_register values(30, '2023-04-10', '2023-04-10', 15, 1, 1);
+
